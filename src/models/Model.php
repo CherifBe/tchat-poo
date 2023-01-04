@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 require_once('src/database.php');
 abstract class Model {
     protected $db;
@@ -7,7 +9,7 @@ abstract class Model {
 
     public function __construct()
     {
-        $this->db = Database::getMyPDO();
+        $this->db = \Database\Database::getMyPDO();
     }
 
     public function findAll(?string $order = ""): array

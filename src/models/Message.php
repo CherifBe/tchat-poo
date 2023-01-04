@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 require_once('src/models/Model.php');
 class Message extends Model
 {

@@ -9,7 +9,7 @@
             </form>
 
             <div class="col-md-6">
-                <h1>Le tchaaaaat</h1>
+                <h2>Le tchaaaaat</h2>
                 <div class="form-group">
                     <?php foreach ($messages as $message) : ?>
                         <p><?= $message['message'] ?></p>

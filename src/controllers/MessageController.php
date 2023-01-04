@@ -1,22 +1,30 @@
 <?php
 
-require_once('src/models/Message.php');
+namespace Controllers;
+
 require_once('src/utils/utils.php');
-class MessageController
+class MessageController extends Controller
 {
+    protected $modelName = \Models\Message::class;
     public function index()
     {
-        $model = new Message();
         /**
          * Récupération des messages
          */
-        $messages = $model->findAll("date DESC");
+        $messages = $this->model->findAll("date DESC");
         /**
          * Affichage
          */
         $pageTitle = "Accueil";
 
         render('messages/index', compact('pageTitle', 'messages'));
+    }
+
+    public function insert()
+    {
+        // ici recevoir le $_POST et les balancer dans la fonction insert
+        $this->model->insert();
+        redirect("index.php");
     }
 
     public function show()
