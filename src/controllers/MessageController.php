@@ -1,6 +1,7 @@
 <?php
 
 require_once('src/models/Message.php');
+require_once('src/utils/utils.php');
 class MessageController
 {
     public function index()
@@ -9,7 +10,7 @@ class MessageController
         /**
          * Récupération des messages
          */
-        $messages = $model->findAll("create_at DESC");
+        $messages = $model->findAll("date DESC");
         /**
          * Affichage
          */

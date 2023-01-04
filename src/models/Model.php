@@ -7,7 +7,7 @@ abstract class Model {
 
     public function __construct()
     {
-        $this->db = Database::getMySQLI();
+        $this->db = Database::getMyPDO();
     }
 
     public function findAll(?string $order = ""): array
@@ -17,8 +17,7 @@ abstract class Model {
             $sql .= " ORDER BY " . $order;
         }
         $resultats = $this->db->query($sql);
-        $items = $resultats->fetch_all();
-
+        $items = $resultats->fetchAll();
         return $items;
     }
 
