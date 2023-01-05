@@ -22,9 +22,11 @@ class MessageController extends Controller
 
     public function insert()
     {
-        // ici recevoir le $_POST et les balancer dans la fonction insert
-        $this->model->insert();
-        redirect("index.php");
+        // ajouter sécurité
+        $author = $_POST['user'];
+        $content = $_POST['message'];
+        $this->model->insert($author, $content);
+        header("Location: index.php");
     }
 
     public function show()

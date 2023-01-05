@@ -9,7 +9,7 @@ class Message extends Model
 
     function insert(string $author, string $content): void
     {
-        $query = $this->db->prepare("INSERT INTO messages SET author = :author, content = :content, created_at = NOW()");
+        $query = $this->db->prepare("INSERT INTO messages SET author = :author, message = :content, date = NOW()");
         $query->execute(compact('author', 'content'));
     }
 }
