@@ -11,9 +11,9 @@
             <div class="col-md-6">
                 <h2>Le tchaaaaat</h2>
                 <div class="form-group">
-                    <?php foreach ($messages as $message) : ?>
-                        <p><?= $message['message'] ?></p>
-                        <small><?= $message['author'] ?></small>
+                    <?php foreach ($allMyMessages as $message) : ?>
+                        <p><?= $message->getMessage() ?></p>
+                        <small><?= $message->getAuthor() ?></small>
 
                     <?php endforeach ?>
                 </div>

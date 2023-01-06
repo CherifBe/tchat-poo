@@ -4,11 +4,11 @@ namespace Controllers;
 
 abstract class Controller
 {
-    protected $model;
-    protected $modelName = "\Models\Message";
+    protected $repository;
+    protected $repositoryName = "\Repository\Message";
 
     public function __construct()
     {
-        $this->model = new $this->modelName();
+        $this->repository = new $this->repositoryName();
     }
 }
